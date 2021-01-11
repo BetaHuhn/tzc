@@ -4,8 +4,11 @@ const codes = require('../data/codes.json')
 export const IS_BROWSER = typeof window !== 'undefined'
 
 export const detect = () => {
-	if (!IS_BROWSER) return console.warn('Can\'t detect timezone without window object.') || null
-	if (typeof Intl === 'undefined' || typeof Intl.DateTimeFormat === 'undefined') return console.log('Intl missing from window.') || null
+	if (!IS_BROWSER) throw new Error('Can\'t detect timezone, window object missing.')
+	if (typeof Intl === 'undefined' || typeof Intl.DateTimeFormat === 'undefined') {
+		console.warn('Can\'t detect timezone, Internationalization API missing from window.')
+		return null
+	}
 
 	const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 	if (!timezone) return null
