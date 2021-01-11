@@ -19,7 +19,7 @@ jobs:
     - name: Download Iana TZ DB
       run: wget https://www.iana.org/time-zones/repository/tzdata-latest.tar.gz -P tzdata
     - name: Unpack TAR file
-      run: gzip -dc tzdata/tzdata-latest.tar.gz | tar -xf -
+      run: gzip -dc tzdata/tzdata-latest.tar.gz | tar -xf - -C tzdata
     - name: Build TZ file
       run: node src/buildTz.js
     - name: Build package
