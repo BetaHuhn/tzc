@@ -1,8 +1,8 @@
 {
   "name": "tzc",
-  "version": "0.1.0-beta",
-  "description": "",
-  "main": "src/tzc.js",
+  "version": "0.1.0-beta.2",
+  "description": "Get Country from Time Zone.",
+  "main": "dist/tzc.min.js",
   "scripts": {
     "lint": "eslint ./src/",
     "watch": "watch 'npm run build' ./src/ --interval=1",
