@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge minor/patch updates
-        uses: ahmadnassri/action-dependabot-auto-merge@v2
+        uses: ahmadnassri/action-dependabot-auto-merge@v2.4
         with:
           target: minor
           github-token: ${{ secrets.GH_PAT }}
